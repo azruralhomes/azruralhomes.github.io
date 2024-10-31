@@ -1,0 +1,86 @@
+body {
+    margin-left: 0;
+    margin-right: 0;
+
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.header, .footer {
+    height: 20vh;
+    width: 80vw;
+
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+}
+
+.content_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content_col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left_col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.left_row {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: right;
+}
+
+.headshot {
+    width: 20vw;
+    height: auto;
+
+    margin: 20px;
+}
+
+.intro_title {
+    
+}
+
+.intro_text {
+    width: 45vw;
+}
+
+.contact_icon {
+    width: 20px;
+    margin-right: 5px;
+}
+
+.contact_info {
+    font-size: 20px;
+}
+
+.footer {
+    max-height: 20vh;
+}
+
+.footer_img {
+    max-height: 20vh;
+}

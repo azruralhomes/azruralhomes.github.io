@@ -1,0 +1,19 @@
+header:
+	"Your Vacant Land and Rural Home Specialist"
+	phone number
+
+footer:
+	DRRE logo
+	MLS logo
+	DRRE url
+
+contact info: 
+	under picture
+
+zillow listing: 
+	vertical scroll
+	side by side with 
+review 
+	google
+	yelp
+	zillow?
