@@ -8,6 +8,38 @@ body {
     overflow-y: scroll;
 }
 
+@media(max-width: 700px) {
+    .flexible_row_col {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .headshot {
+        width: 80vw;
+        height: auto;
+
+        margin-bottom: 10px;
+    }
+}
+
+@media(min-width: 700px) {
+    .flexible_row_col {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .headshot {
+        width: 400px;
+        height: auto;
+    
+        margin: 20px;
+    }
+}
+
 .header, .footer {
     height: 20vh;
     width: 80vw;
@@ -53,19 +85,11 @@ body {
     align-items: right;
 }
 
-.headshot {
-    width: 20vw;
-    height: auto;
+.intro {
+    width: 90%;
 
-    margin: 20px;
-}
-
-.intro_title {
-    
-}
-
-.intro_text {
-    width: 45vw;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 .contact_icon {
