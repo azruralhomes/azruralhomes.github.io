@@ -1,6 +1,38 @@
+@font-face {
+    font-family: 'Abraham';
+    src: url('fonts/AbrahamStampStamp-Jqw7.ttf');
+}
+
+@font-face {
+    font-family: 'Merriweather';
+    src: url('fonts/merriweather-font/Merriweather-RXwe.ttf');
+}
+
+.abraham {
+    font-family: 'Abraham';
+}
+
+.merriweather {
+    font-family: 'Merriweather';
+}
+
+.sk-bio-container, .sk_branding, .sk-ww-zillow-reviews, .sk-ww-google-reviews, body {
+    background-color: black !important;
+    padding: 0 !important;
+}
+
+.sk-bio-profile, .sk-bio-content, .tutorial_link, .sk-load-more-btn-container, .sk-popup, .js-popup, .sk-share-popup {
+    display: none;
+}
+
+h2, p {
+    color: white;
+}
+
 body {
     margin-left: 0;
     margin-right: 0;
+    margin-top: 0;
 
     width: 100%;
     max-width: 100%;
@@ -8,7 +40,13 @@ body {
     overflow-y: scroll;
 }
 
-@media(max-width: 700px) {
+a {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    text-decoration: none;
+}
+
+@media(max-width: 900px) {
     .flexible_row_col {
         display: flex;
         flex-direction: column;
@@ -24,7 +62,7 @@ body {
     }
 }
 
-@media(min-width: 700px) {
+@media(min-width: 900px) {
     .flexible_row_col {
         display: flex;
         flex-direction: row;
@@ -40,12 +78,36 @@ body {
     }
 }
 
-.header, .footer {
-    height: 20vh;
-    width: 80vw;
+.header {
+    margin-left: 0;
+    margin-right: 0;
 
-    margin-left: 10vw;
-    margin-right: 10vw;
+    background-image: url('photos/header_pano.JPG');
+    background-size: cover;
+    background-position: bottom;
+
+    height: 15vw;
+}
+
+.header_col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+}
+
+.header_text {
+    font-size: 5vw;
+    text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+    margin-bottom: 10px;
+    padding-left: min(5vw, 20px)
+}
+
+.header_sub_text {
+    font-size: 4vw;
+    text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+    margin-top: 0;
+    padding-left: min(5vw, 20px)
 }
 
 .content {
@@ -92,6 +154,10 @@ body {
     margin-right: 5%;
 }
 
+.intro_title {
+    font-size: 30px;
+}
+
 .contact_icon {
     width: 20px;
     margin-right: 5px;
@@ -102,7 +168,12 @@ body {
 }
 
 .footer {
+    height: 20vh;
     max-height: 20vh;
+    width: 80vw;
+
+    margin-left: 10vw;
+    margin-right: 10vw;
 }
 
 .footer_img {
