@@ -25,6 +25,10 @@
     display: none;
 }
 
+.sk-bio-profile {
+    margin: auto !important;
+}
+
 h2, p {
     color: white;
 }
@@ -40,15 +44,7 @@ body {
     overflow-y: scroll;
 }
 
-a {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 10px;
-    text-decoration: none;
-
-    color: #44b6f4;
-}
-
-@media(max-width: 900px) {
+@media(max-width: 700px) {
     .flexible_row_col {
         display: flex;
         flex-direction: column;
@@ -64,7 +60,7 @@ a {
     }
 }
 
-@media(min-width: 900px) {
+@media(min-width: 700px) {
     .flexible_row_col {
         display: flex;
         flex-direction: row;
@@ -88,7 +84,7 @@ a {
     background-size: cover;
     background-position: bottom;
 
-    height: 15vw;
+    height: max(20vw, 20vh);
 }
 
 .header_col {
@@ -99,14 +95,14 @@ a {
 }
 
 .header_text {
-    font-size: 5vw;
+    font-size: max(6vw, 6vh);
     text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
     margin-bottom: 10px;
     padding-left: min(5vw, 20px)
 }
 
 .header_sub_text {
-    font-size: 4vw;
+    font-size: max(5vw, 4vh);
     text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
     margin-top: 0;
     padding-left: min(5vw, 20px)
@@ -151,6 +147,14 @@ a {
     align-items: right;
 }
 
+.contact_info {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    text-decoration: none;
+
+    color: #44b6f4;
+}
+
 .intro {
     width: 90%;
 
@@ -171,13 +175,38 @@ a {
     font-size: 20px;
 }
 
+.button_gap {
+    gap: 20px;
+}
+
+.review_button {
+    font-family: 'Merriweather';
+    font-size: 25px;
+    color: white;
+
+    border: solid 3px white;
+    border-radius: 20px;
+
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.span_image {
+    width: 30px;
+    padding-bottom: 5px;
+}
+
 .footer {
-    height: 20vh;
-    max-height: 20vh;
+    min-height: max-content;
     width: 80vw;
 
-    margin-left: 10vw;
-    margin-right: 10vw;
+    background-color: white;
+
+    padding-left: 10vw;
+    padding-right: 10vw;
+
+    padding-top: 1vw;
+    padding-bottom: 1vw;
 }
 
 .footer_img {
