@@ -1,0 +1,163 @@
+.hljs-keyword {
+	color: blue;
+} 
+
+.hljs-built_in {
+	color: darkviolet;
+} 
+
+.hljs-type {
+	color: deeppink;
+} 
+
+.hljs-literal {
+	color: dodgerblue;
+} 
+
+.hljs-number {
+	color: firebrick;
+} 
+
+.hljs-operator {
+	color: forestgreen;
+} 
+
+.hljs-punctuation {
+	color: fuchsia;
+} 
+
+.hljs-property {
+	color: royalblue;
+} 
+
+.hljs-regexp {
+	color: green;
+} 
+
+.hljs-string {
+	color: green;
+} 
+
+.hljs-char.escape {
+	color: greenyellow;
+} 
+
+.hljs-subst {
+	color: indigo;
+} 
+
+.hljs-symbol {
+	color: lightseagreen;
+} 
+
+.hljs-class {
+	color: lightskyblue;
+} 
+
+.hljs-.hljs-function {
+	color: limegreen;
+} 
+
+.hljs-variable {
+	color: mediumorchid;
+} 
+
+.hljs-title {
+	color: goldenrod;
+} 
+
+.hljs-params {
+	color: mediumseagreen;
+} 
+
+.hljs-comment {
+	color: gray;
+} 
+
+.hljs-doctag {
+	color: olive;
+} 
+
+.hljs-meta {
+	color: orange;
+} 
+
+.hljs-section {
+	color: palevioletred;
+} 
+
+.hljs-tag {
+	color: purple;
+} 
+
+.hljs-name {
+	color: rebeccapurple;
+} 
+
+.hljs-attr {
+	color: red;
+} 
+
+.hljs-attribute {
+	color: rosybrown;
+} 
+
+.hljs-bullet {
+	color: royalblue;
+} 
+
+.hljs-code {
+	color: saddlebrown;
+} 
+
+.hljs-emphasis {
+	color: salmon;
+} 
+
+.hljs-strong {
+	color: sandybrown;
+} 
+
+.hljs-formula {
+	color: seagreen;
+} 
+
+.hljs-link {
+	color: sienna;
+} 
+
+.hljs-quote {
+	color: skyblue;
+} 
+
+.hljs-selector-tag {
+	color: springgreen;
+} 
+
+.hljs-selector-id {
+	color: steelblue;
+} 
+
+.hljs-selector-class {
+	color: tan;
+} 
+
+.hljs-selector-attr {
+	color: teal;
+} 
+
+.hljs-selector-pseudo {
+	color: tomato;
+} 
+
+.hljs-diff {
+	color: turquoise;
+} 
+
+.hljs-addition {
+	color: violet;
+} 
+
+.hljs-deletion {
+	color: yellowgreen;
+} 

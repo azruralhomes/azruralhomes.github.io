@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="editor_style.css" />
+    <link rel="stylesheet" href="../../resources/header_style.css" />
+    
+    <link rel="stylesheet" href="../post_style.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet">
+
+    <script src="editorFunctions.js"></script>
+</head>
+
+<body onload="editorInit()">
+    <div class="preview_modal" id="preview_modal">
+        <details class="post_div" id="post_div" open>
+        </details>
+        <div class="preview_btns">
+            <button class="cancel_button" onclick="closePreview('')">Cancel</button>
+            <button class="draft_button" onclick="postBlog('draft')">Save as Draft</button>
+            <button class="publish_button" onclick="postBlog('')">Publish</button>
+        </div>
+    </div>
+
+    <div hidden id="processing_modal">
+    </div>
+
+    <div class="editor_modal" id="editor_modal">
+        <div class="side_by_side">
+            <a class="current page_btn" href="../blog_editor">Editor</a>
+            <a class="page_btn" href="../blog">Blog</a>
+        </div>
+
+        <div class="center_obj">
+            <select required class="posts_select" id="posts_select" onchange="selectPost()">
+            </select>
+        </div>
+
+        <div class="side_by_side">
+            <div class="right_container">
+                <div id="toolbar-container">
+                    <select class="ql-font"></select>
+                    <select class="ql-size"></select>
+                    <button class="ql-bold"></button>
+                    <button class="ql-italic"></button>
+                    <button class="ql-underline"></button>
+                    <button class="ql-strike"></button>
+                    <select class="ql-color"></select>
+                    <button class="ql-script" value="sub"></button>
+                    <button class="ql-script" value="super"></button>
+                    <button class="ql-blockquote"></button>
+                    <button class="ql-code-block"></button>
+                    <button class="ql-list" value="ordered"></button>
+                    <button class="ql-list" value="bullet"></button>
+                    <button class="ql-indent" value="-1"></button>
+                    <button class="ql-indent" value="+1"></button>
+                    <select class="ql-align"></select>
+                    <button class="ql-link"></button>
+                    <button class="ql-image"></button>
+                    <button class="ql-video"></button>
+                </div>
+                <div id="editor">
+                </div>
+            </div>
+
+
+            <div class="left_container">
+                <input type="text" class="left_input" id="title_input" placeholder="Title" />
+                <input type="text" class="left_input" id="subtitle_input" placeholder="Subtitle" />
+                <input type="text" class="left_input" id="author_input" placeholder="Author" />
+                <input type="date" class="left_input" id="published_input" />
+                <div id="tags_display" class="tags_display" contenteditable="false"></div>
+                <input id="tags_input" class="left_input" placeholder="Tags" />
+                <button id='save_btn' class="left_input" onclick="openPreview()">Publish</button>
+                <button id='delete_btn' class="left_input" onclick="deletePost()">Delete Post</button>
+            </div>
+        </div>
+
+        <!-- Sourced from https://github.com/mudoo/quill-resize-module?tab=readme-ov-file -->
+        <!-- (for some reason does not work well when in Head, NEEDS to be in body) -->
+        <link href="https://cdn.jsdelivr.net/npm/quill-resize-module@2.0.3/dist/resize.css" rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/quill-resize-module@2.0.3/dist/resize.js"></script>
+
+        <script>
+            var quill = new Quill('#editor', {
+                theme: 'snow',
+                history: {
+                    delay: 1000, // Changes within 1000ms are merged
+                    maxStack: 100, // Maximum size of the undo/redo stack
+                    userOnly: false // Tracks programmatic changes as well as user input
+                },
+                modules: {
+                    resize: {
+                        // set embed tags to capture resize
+                        embedTags: ["VIDEO", "IFRAME"],
+                        // custom toolbar
+                        tools: [
+                            "left",
+                            "center",
+                            "right",
+                            "full",
+                            "edit",
+                            {
+                                text: "Alt",
+                                verify(activeEle) {
+                                    return activeEle && activeEle.tagName === "IMG";
+                                },
+                                handler(evt, button, activeEle) {
+                                    let alt = activeEle.alt || "";
+                                    alt = window.prompt("Alt for image", alt);
+                                    if (alt == null) return;
+                                    activeEle.setAttribute("alt", alt);
+                                },
+                            },
+                        ],
+                    },
+                    syntax: true,
+                    toolbar: '#toolbar-container',
+                }
+            });
+        </script>
+</body>
+
+</html>

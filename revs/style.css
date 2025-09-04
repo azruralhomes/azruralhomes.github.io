@@ -1,0 +1,46 @@
+.reviews_pane {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    flex-wrap: wrap;
+}
+
+.review_div {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+
+    width: 20vw;
+    min-width: 250px;
+    max-width: 500px;
+    padding: 4vw;
+    margin: 1vw;
+
+    border: 1px solid black;
+    border-radius: 15px;
+
+    background-color: white;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.review_author {
+    color: lightskyblue;
+    font-weight: 700;
+}
+
+.yellow_star {
+    color: gold;
+    font-size: 20px;
+}
+
+.gray_star {
+    color: gainsboro;
+    font-size: 20px;
+}
+
+.review_date {}
+
+.review_text {
+    font-size: 14px;
+}

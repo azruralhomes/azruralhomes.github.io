@@ -1,0 +1,252 @@
+p {
+    font-family: 'Arial';
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+body {
+    background-color: black;
+    color: white;
+    margin: 0;
+}
+
+image,
+img {
+    background-color: white;
+}
+
+iframe {
+    width: 100%;
+    height: max(25vh, 25vw);
+
+    border: none;
+}
+
+@media (max-width: 600px) {
+    .search_div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .window_content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .tags_content {
+        width: 100%;
+        height: max-content;
+
+        display: grid;
+        grid-template-columns: 5fr 1fr;
+        column-gap: 20px;
+        row-gap: 10px;
+    }
+
+}
+
+@media (min-width: 600px) {
+    .search_div {
+        margin-right: 20px;
+
+        display: flex;
+        flex-direction: row;
+        align-items: right;
+        justify-content: right;
+    }
+
+    .window_content {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+
+        column-gap: 40px;
+
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .tags_content {
+        width: max-content;
+        height: max-content;
+
+        display: grid;
+        grid-template-columns: 5fr 1fr;
+        column-gap: 20px;
+        row-gap: 10px;
+    }
+
+
+    .page_select_div {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.button_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 10px;
+
+    border: white 1px solid;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.button_text {
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.content_button {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+
+    border: black solid 1px;
+
+    background-color: white;
+
+    width: 100px;
+    height: 25px;
+}
+
+.button_content .tagButton {
+    margin-right: 20px;
+}
+
+.arrow_btn {
+    border: none;
+    box-shadow: none;
+
+    font-size: 20px;
+    color: white;
+    background-color: black;
+}
+
+.round_select {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+
+    border: black solid 1px;
+
+    background-color: white;
+
+    width: max-content;
+}
+
+.post_div {
+    width: 80vw;
+}
+
+.post_div .tags {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    width: 75vw;
+
+    margin-bottom: 30px;
+}
+
+.search_highlight {
+    background-color: yellow;
+}
+
+.search_bar {
+    height: 30px;
+    width: 250px;
+
+    border-radius: 15px;
+    border: black solid 1px;
+
+    padding-left: 10px;
+
+    background-color: white;
+}
+
+.selected_tags_div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    width: 75vw;
+    height: min-content;
+}
+
+.small_btn {
+    width: max-content;
+}
+
+.filterButton {
+    border: none;
+    border-radius: 15px;
+    background-color: white;
+
+    color: black;
+    box-shadow: none;
+    border: white 1px solid;
+
+    height: 25px;
+    width: max-content;
+    min-width: max-content;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+
+    margin-bottom: 15px;
+}
+
+.center_div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 20px;
+}
+
+.footer_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.blog_content {
+    min-width: 80vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: left;
+}
+
+.ql-code-block {
+    max-width: 95%;
+    width: max-content;
+    background-color: rgba(255, 255, 255, 1) !important;
+}
+
+.ql-code-block-container {
+    font-family: 'Courier New', Courier, monospace;
+
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+
+    width: max-content;
+}

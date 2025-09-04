@@ -1,13 +1,3 @@
-@font-face {
-    font-family: 'Abraham';
-    src: url('fonts/AbrahamStampStamp-Jqw7.ttf');
-}
-
-@font-face {
-    font-family: 'Merriweather';
-    src: url('fonts/merriweather-font/Merriweather-RXwe.ttf');
-}
-
 .abraham {
     font-family: 'Abraham';
 }
@@ -16,12 +6,22 @@
     font-family: 'Merriweather';
 }
 
-.sk-bio-container, .sk_branding, .sk-ww-zillow-reviews, .sk-ww-google-reviews, body {
+.sk-bio-container,
+.sk_branding,
+.sk-ww-zillow-reviews,
+.sk-ww-google-reviews,
+body {
     background-color: black !important;
     padding: 0 !important;
 }
 
-.sk-bio-profile, .sk-bio-content, .tutorial_link, .sk-load-more-btn-container, .sk-popup, .js-popup, .sk-share-popup {
+.sk-bio-profile,
+.sk-bio-content,
+.tutorial_link,
+.sk-load-more-btn-container,
+.sk-popup,
+.js-popup,
+.sk-share-popup {
     display: none;
 }
 
@@ -29,7 +29,16 @@
     margin: auto !important;
 }
 
-h2, p {
+iframe {
+    width: 100%;
+    height: max(25vh, 25vw);
+
+    border: none;
+
+}
+
+h2,
+p {
     color: white;
 }
 
@@ -71,41 +80,9 @@ body {
     .headshot {
         width: 400px;
         height: auto;
-    
+
         margin: 20px;
     }
-}
-
-.header {
-    margin-left: 0;
-    margin-right: 0;
-
-    background-image: url('photos/header_pano.JPG');
-    background-size: cover;
-    background-position: bottom;
-
-    height: max(20vw, 20vh);
-}
-
-.header_col {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: left;
-}
-
-.header_text {
-    font-size: max(6vw, 6vh);
-    text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
-    margin-bottom: 10px;
-    padding-left: min(5vw, 20px)
-}
-
-.header_sub_text {
-    font-size: max(5vw, 4vh);
-    text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
-    margin-top: 0;
-    padding-left: min(5vw, 20px)
 }
 
 .content {
@@ -213,4 +190,58 @@ body {
 
 .footer_img {
     max-height: 20vh;
+}
+
+.reviews_pane {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+    gap: 10px;
+
+    justify-content: space-evenly;
+    align-items: center;
+
+    margin: 10px;
+}
+
+.review_div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 21vw;
+    min-width: 250px;
+    max-width: 500px;
+
+    padding: 3vw;
+
+    border: 1px solid black;
+    border-radius: 15px;
+
+    background-color: white;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.review_author {
+    color: lightskyblue;
+    font-weight: 700;
+}
+
+.yellow_star {
+    color: gold;
+    font-size: 20px;
+}
+
+.gray_star {
+    color: gainsboro;
+    font-size: 20px;
+}
+
+.review_date {}
+
+.review_text {
+    color: black;
+    font-size: 14px;
 }

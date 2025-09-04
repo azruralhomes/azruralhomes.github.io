@@ -1,0 +1,70 @@
+@font-face {
+    font-family: 'Abraham';
+    src: url('fonts/AbrahamStampStamp-Jqw7.ttf');
+}
+
+@font-face {
+    font-family: 'Merriweather';
+    src: url('fonts/merriweather-font/Merriweather-RXwe.ttf');
+}
+
+body,
+html {
+    margin: 0;
+    background-color: black;
+}
+
+.header_menu {
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.header_tab {
+    text-decoration: none;
+
+    font-family: 'Abraham';
+    font-size: 3vw;
+    color: white;
+}
+
+.header {
+    margin-left: 0;
+    margin-right: 0;
+
+    background-image: url('header_pano.JPG');
+    background-size: cover;
+    background-position: bottom;
+
+    height: max(20vw, 20vh);
+}
+
+.header_col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+}
+
+.header_text {
+    font-size: max(6vw, 6vh);
+    font-family: 'Abraham';
+
+    color: black !important;
+
+    text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+    margin-bottom: 10px;
+    padding-left: min(5vw, 20px)
+}
+
+.header_sub_text {
+    font-size: max(5vw, 4vh);
+    font-family: 'Abraham';
+
+    color: black;
+    
+    text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+    margin-top: 0;
+    padding-left: min(5vw, 20px)
+}

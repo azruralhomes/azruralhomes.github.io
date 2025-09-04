@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="editor_style.css" />
+    <link rel="stylesheet" href="../../resources/header_style.css" />
+    <link rel="stylesheet" href="../post_style.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet">
+
+    <script src="loginFunctions.js"></script>
+</head>
+
+<body>
+    <div class="login_modal" id="login_modal">
+        <h3 class="login_header">Login</h3>
+        <input type="text" class="login_input" id="username_input" placeholder="username" />
+        <input type="password" class="login_input" id="password_input" placeholder="password" />
+        <button id='login_btn' class="login_header" onclick="login()">Login</button>
+        <text id='error_message' class="error_message">Invalid usename or password</button>
+    </div>
+</body>
+
+</html>
