@@ -5,21 +5,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VKT25Q38Q1"></script>
-
     <link href="blog_style.css" rel="stylesheet" type="text/css" />
     <link href="post_style.css" rel="stylesheet" type="text/css" />
 
-    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet">
-
     <script src="blogFunctions.js"></script>
 
-    <script src="https://www.google.com/recaptcha/api.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 </head>
 
 <body onload="blogInit()">
-    <iframe title="menu" src="../header/header.html" scrolling="no"></iframe>
+    <iframe class="menu_iframe" title="menu" src="../header/header.html" scrolling="no"></iframe>
 
     <div class="search_div">
         <input class="search_bar" id="search_bar" type="search" placeholder="Search..">
@@ -37,13 +32,16 @@
                 <button id="chron_order" class="content_button" onclick="chronOrder()">Newest First</button>
                 <button id="rev_chron_order" class="content_button" onclick="refChronOrder()">Oldest First</button>
             </div>
-            <div class="tags_content" id="tags_content">
+            <div class="button_content">
+                <text class="button_text">Top Tags</text>
+                <div class="tags_content" id="tags_content">
+                </div>
             </div>
         </div>
     </div>
 
     <div class="footer_div">
-        <div class="page_select_div">
+        <div class="page_select_div" id="page_select_div">
             <button onclick="prevPage()" class="arrow_btn">⮘</button>
             <select id="pageSelect" onchange="filterBlog()" class="round_select">
                 <option value=1 id="pg1">1</option>

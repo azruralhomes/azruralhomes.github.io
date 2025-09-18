@@ -13,9 +13,10 @@ body {
 image,
 img {
     background-color: white;
+    max-width: 100%;
 }
 
-iframe {
+.menu_iframe {
     width: 100%;
     height: max(25vh, 25vw);
 
@@ -37,6 +38,18 @@ iframe {
 
         margin-left: 20px;
         margin-right: 20px;
+
+        max-width: 100%;
+    }
+
+    .blog_content {
+        width: 90vw;
+        max-width: 90vw;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: left;
     }
 
     .tags_content {
@@ -66,16 +79,35 @@ iframe {
         flex-direction: row-reverse;
         justify-content: space-between;
 
-        column-gap: 40px;
+        column-gap: 20px;
 
         margin-left: 20px;
         margin-right: 20px;
+
+        max-width: 100vw;
+    }
+
+    .blog_content {
+        width: calc(100vw - 325px);
+        max-width: calc(100vw - 325px);
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: left;
+    }
+
+    .post_div .title,
+    .post_div .subtitle,
+    .post_div .published,
+    .post_div .author,
+    .post_div .body,
+    .post_div .tags {
+        width: max-content;
+        max-width: calc(100vw - 325px);
     }
 
     .tags_content {
-        width: max-content;
-        height: max-content;
-
         display: grid;
         grid-template-columns: 5fr 1fr;
         column-gap: 20px;
@@ -148,23 +180,18 @@ iframe {
     width: max-content;
 }
 
-.post_div {
-    width: 80vw;
-}
-
 .post_div .tags {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
 
-    width: 75vw;
-
     margin-bottom: 30px;
 }
 
 .search_highlight {
     background-color: yellow;
+    width: max-content;
 }
 
 .search_bar {
@@ -227,12 +254,8 @@ iframe {
     justify-content: center;
 }
 
-.blog_content {
-    min-width: 80vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: left;
+.side_content {
+    width: 225px;
 }
 
 .ql-code-block {
@@ -249,4 +272,16 @@ iframe {
     margin-right: 10px;
 
     width: max-content;
+    max-width: 95vw;
+}
+
+.blog_iframe {
+    width: 100%;
+    border: none;
+    height: max-content;
+}
+
+.sidebar-container {
+    display: none;
+
 }

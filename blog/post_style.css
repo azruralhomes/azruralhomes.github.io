@@ -24,8 +24,6 @@ p {
     overflow-y: auto;
     tab-size: 4;
     text-align: left;
-    white-space: pre-wrap;
-    word-wrap: break-word;
 }
 
 .post_div select {
@@ -112,6 +110,14 @@ p {
         clear: both;
     }
 }
+
+.tags_div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
 .hljs-keyword {
 	color: blue;
 } 

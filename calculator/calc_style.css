@@ -1,0 +1,108 @@
+iframe {
+    width: 100%;
+    height: max(25vh, 25vw);
+
+    border: none;
+}
+
+body {
+    background-color: black !important;
+    color: white;
+    padding: 0 !important;
+}
+
+input {
+    width: 100px;
+    height: 20px;
+}
+
+button {
+    width: 100px;
+    height: 20px;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+label {
+    padding: 10px;
+}
+
+.pane_content {
+    display: flex;
+    flex-direction: column;
+}
+
+.half_pane {
+    width: 50%;
+}
+
+.input_grid {
+    display: grid;
+    grid-template-columns: max-content max-content;
+
+    align-items: center;
+
+    width: 300px;
+}
+
+.addtl_input {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+}
+
+.equation {
+    width: 300;
+
+    display: flex;
+    flex-direction: row;
+
+    margin: 10px;
+}
+
+
+.answer_square {
+    width: 55px;
+    height: 55px;
+
+    margin: 0;
+    text-align: center;
+}
+
+.equals_sign {
+    width: max-content;
+    height: 20px;
+    margin: 15px;
+}
+
+.equation_rectangle {
+    width: 250px;
+    height: 55px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.equation_half {
+    width: 250px;
+    height: 25px;
+    padding: 0;
+    margin: 0;
+
+    text-align: center;
+}
+
+.division_line {
+    height: 5px;
+    width: 250px;
+
+    background-color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+.answer {
+    margin-left: 20px;
+}

@@ -1,5 +1,5 @@
 // API url
-const blogURL = "https://u315eql0b6.execute-api.us-east-2.amazonaws.com/blog/scratch_blog";
+const blogURL = "https://g7dur3pogvpl2nf6guqe3zpkvi0rzedy.lambda-url.us-east-2.on.aws/";
 
 //default options for the blog API request
 var requestOptions = {
@@ -17,7 +17,18 @@ var requestOptions = {
  * @returns none
  */
 async function blogInit() {
-    loadPosts();
+    //TODO: top seven tags
+    scroll(0, 0);
+
+    let content = document.getElementById("blog_content")
+    content.innerHTML = '<h2 id="loading_icon">Loading Blog</h2>'
+
+    let response = await sendRequest();
+
+    buildPosts(response);
+
+    filterBlog();
+    drawTagBar();
 
     let search = document.getElementById('search_bar');
     search.addEventListener("keyup", function (event) {
@@ -69,33 +80,54 @@ function nextPage() {
     }
 }
 
+//loads the posts from json to html
+async function buildPosts(response) {
+    content = document.getElementById("blog_content")
 
-/**
- * switches current visible blog to the previous page
- * @param {number} pgNum the number of the page select option to be created
- * @returns none
-*/
-function createPgOption(pgNum) {
-    return `<option value=${pgNum} id="pg${pgNum}">1</option>`
+    let postsPer = document.getElementById('postPerPage').value;
+    let pages = document.getElementById("page_select_div")
+    pages.style.display = 'none';
+    let pageSel = document.getElementById("pageSelect")
+    pageSel.innerHTML = '<option value="1" id="opt1">1</option>'
+
+    for (let h = 0; h < response.length; h++) {
+        let page = JSON.parse(response[h]);
+        for (let i = 0; i < page['items'].length; i++) {
+            pageNum = Math.floor(i / postsPer) + 1
+            content.innerHTML += newBlogPost(page['items'][i], pageNum);
+        }
+    }
+
+    document.getElementById('loading_icon').remove();
 }
 
+//format a json response into a legible blog post
+function newBlogPost(entry, pageNum) {
+    let tags = newTagsBar(entry);
+    let post = '';
 
-/** 
- * loads blog from API
- * @param none
- * @returns none
- */
-async function loadPosts() {
-    scroll(0, 0)
+    entry['content'] = entry['content'].replaceAll('<span style="font-size: medium;">', '').replaceAll('</span>', '').replaceAll('&nbsp;', '')
 
-    document.getElementById("tags_content").innerHTML = '';
+    console.log(entry['content'].substr(0, 200));
 
-    let content = document.getElementById("blog_content");
-    let response = await sendRequest();
-    content.innerHTML = response['html'];
+    if (pageNum == 1) {
+        post = `<details class="post_div" id="post_${entry['id']}" style="display: block;"><summary class="title">${entry['title']}</summary><h3 class="published">${new Date(entry['updated']).toDateString()}</h3><h3 class="author">${entry['author']['displayName']}</h3><div class="body">${entry['content']}</div><div class="tags">${tags}</div></details>`
+    }
+    else {
+        post = `<details class="post_div" id="post_${entry['id']}" style="display: none;"><summary class="title">${entry['title']}</summary><h3 class="published">${new Date(entry['updated']).toDateString()}</h3><h3 class="author">${entry['author']['displayName']}</h3><div class="body">${entry['content']}</div><div class="tags">${tags}</div></details>`
+    }
 
-    filterBlog();
-    drawTagBar(response);
+    return post;
+}
+
+//tag bars are separate from blog posts for formatting reasons; these are the tags for each post.
+function newTagsBar(entry) {
+    let tags = '';
+    for (let j = 0; j < entry['labels'].length; j++) {
+        let str = `<button id="${entry['labels'][j]}" class="tagButton" onclick="filterTag(this)">${entry['labels'][j]}</button>`
+        tags += str;
+    }
+    return tags
 }
 
 
@@ -107,17 +139,31 @@ async function loadPosts() {
     } response 
  * @returns none
  */
-function drawTagBar(response) {
+function drawTagBar() {
+    let allTags = document.getElementsByClassName('tagButton');
+    let tagsDict = {};
+
+    for (let i = 0; i < allTags.length; i++) {
+        if (allTags[i].outerHTML in tagsDict) {
+            tagsDict[allTags[i].outerHTML] += 1;
+        }
+        else {
+            tagsDict[allTags[i].outerHTML] = 1;
+        }
+    }
+
     let tagsDiv = document.getElementById('tags_content');
 
-    for (let i = 0; i < response['tags'].length; i++) {
-        let row = document.createElement("div");
-        row.innerHTML = response['tags'][i][0];
-        tagsDiv.appendChild(row)
+    for (let i = 0; i < 7; i++) {
+        let maxKey = Object.keys(tagsDict).reduce(function (a, b) { return tagsDict[a] > tagsDict[b] ? a : b });
 
-        row = document.createElement("text");
-        row.innerText = response['tags'][i][1];
-        tagsDiv.appendChild(row);
+        if (tagsDict[maxKey] > 0) {
+            tagsDiv.innerHTML += `<div>${maxKey}</div>`;
+
+            tagsDiv.innerHTML += `<div>${tagsDict[maxKey]}</div>`;
+
+            tagsDict[maxKey] = 0;
+        }
     }
 }
 
@@ -144,21 +190,21 @@ function searchBlog() {
     let currentPg = parseInt(pgSelect.value);
 
     pgSelect.innerHTML = '';
-    pgSelect.innerHTML = pgSelect.innerHTML + createPgOption(1);
+    pgSelect.innerHTML = pgSelect.innerHTML + `<option value=${1} id="pg${1}">pg${1}</option>`;
 
     let filteredCount = 0;
     for (let i = 0; i < posts.length; i++) {
         let pageNum = parseInt(parseInt(filteredCount) / parseInt(postsPer.value)) + 1;
 
         if (!document.getElementById('pg' + pageNum)) {
-            pgSelect.innerHTML = pgSelect.innerHTML + createPgOption(pageNum);
+            pgSelect.innerHTML = pgSelect.innerHTML + `<option value=${pageNum} id="pg${pageNum}">pg${pageNum}</option>`;
         }
 
         if (posts[i].innerText.indexOf(search) >= 0) {
             posts[i].style.display = 'block';
             posts[i].open = false;
             filteredCount = filteredCount + 1;
-            highlightSearch(posts[i])
+            posts[i].innerHTML = highlightSearch(posts[i], search);
         }
         else {
             posts[i].style.display = 'none';
@@ -172,25 +218,21 @@ function searchBlog() {
  * @param none
  * @returns none
 */
-function highlightSearch(post) {
-    post.getElementsByClassName('title')[0].replaceAll(search, '<span class="search_highlight">' + search + '</span  >')
-    post.getElementsByClassName('subtitle')[0].replaceAll(search, '<span class="search_highlight">' + search + '</span  >')
-    post.getElementsByClassName('author')[0].replaceAll(search, '<span class="search_highlight">' + search + '</span  >')
-    post.getElementsByClassName('published')[0].replaceAll(search, '<span class="search_highlight">' + search + '</span  >')
-    
-    return post.innerHTML.replaceAll(search, '<span class="search_highlight">' + search + '</span  >')
-}
+function highlightSearch(post, search) {
+    console.log(post.innerText)
 
-/**
- * clears the search bar value and removes all of the highlighted search terms in blog
- * @param none
- * @returns none
-*/
-function clearSearch() {
-    document.getElementById('search_bar').value = '';
-    let blog = document.getElementById('blog_content');
-    blog.innerHTML = blog.innerHTML.replaceAll('<span class="search_highlight">', '').replaceAll('</span  >', '')
-    filterBlog();
+    const regex = />(.*?)</g;
+    const found = post.innerHTML.match(regex);
+
+    for (let i = 0; i < found.length; i++) {
+        if (found[i].indexOf(search) >= 0) {
+            let temp = found[i].replaceAll(search, '<span class="search_highlight">' + search + '</span  >')
+            console.log(temp)
+            post.innerHTML = post.innerHTML.replaceAll(found[i], temp)
+        }
+    }
+
+    return post.innerHTML
 }
 
 
@@ -237,19 +279,14 @@ function filterBlog() {
     let currentPg = parseInt(pgSelect.value);
 
     pgSelect.innerHTML = '';
-    pgSelect.innerHTML = pgSelect.innerHTML + createPgOption(1);
+    pgSelect.innerHTML = pgSelect.innerHTML + `<option value=${1} id="pg${1}">pg${1}</option>`;
 
     let filteredCount = 0;
     for (let i = 0; i < posts.length; i++) {
         let add = true;
-        posts[i].open = true;
+        posts[i].open = false;
 
-        let tagsDiv = posts[i].getElementsByClassName('tags')[0]
-
-        let dateDiv = posts[i].getElementsByClassName('published')[0]
-        if (dateDiv.innerText === 'DRAFT') {
-            posts[i].remove();
-        }
+        let tagsDiv = posts[i].getElementsByClassName('tags_div')[0]
 
         for (let j = 0; j < tags.length; j++) {
             if (!tagsDiv.innerHTML.includes(tags[j].id)) {
@@ -260,7 +297,7 @@ function filterBlog() {
         let pageNum = parseInt(filteredCount / parseInt(postsPer.value)) + 1;
 
         if (!document.getElementById('pg' + pageNum)) {
-            pgSelect.innerHTML = pgSelect.innerHTML + createPgOption(pageNum);
+            pgSelect.innerHTML = pgSelect.innerHTML + `<option value=${pageNum} id="pg${pageNum}">pg${pageNum}</option>`;
         }
 
         if (add && pageNum === currentPg) {

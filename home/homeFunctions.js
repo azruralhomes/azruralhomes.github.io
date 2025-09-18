@@ -1,8 +1,3 @@
-let map;
-let centerCoordinates = { lat: 42.349134, lng: -71.083184 }; // Boston, MA
-let infoWindow;
-let contentString;
-
 async function initMap() {
     let revs = await getReviews();
 

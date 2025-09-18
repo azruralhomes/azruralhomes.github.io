@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+
+    <link href="calc_style.css" rel="stylesheet" type="text/css" />
+
+    <script src="calcFunctions.js"></script>
+</head>
+
+<body>
+    <iframe title="menu" src="../header/header.html" scrolling="no"></iframe>
+
+    <div class="pane_content">
+        <div class="half_pane">
+            <div class="input_grid" id="input_grid">
+                <label for="commission_percentage">Commission Percentage</label>
+                <span class="percentage-sign">
+                    <input type="number" id="commission_percentage" value="">
+                    %</span>
+
+                <label for="seller_profit">Seller Profit</label>
+                <input type="number" id="seller_profit" value="0">
+
+                <label for="title">Title</label>
+                <input type="number" id="title" value="0">
+
+                <label for="escrow">Escrow</label>
+                <input type="number" id="escrow" value="0">
+
+                <label for="recording">Recording</label>
+                <input type="number" id="recording" value="0">
+
+                <label for="septic">Septic</label>
+                <input type="number" id="septic" value="0">
+
+                <label for="pad">Pad</label>
+                <input type="number" id="pad" value="0">
+
+                <label for="mortgage_payout">Mortgage Payout</label>
+                <input type="number" id="mortgage_payout" value="0">
+            </div>
+
+            <div class="input_grid">
+                <button class="add_input" onclick="addInput()">Add Another Field</button>
+                <button class="calc" onclick="calculate()">Calculate</button>
+            </div>
+        </div>
+
+        <div class="half_pane">
+            <h3 class="answer" id="answer"></h3>
+        </div>
+    </div>
+</body>
+
+</html>
