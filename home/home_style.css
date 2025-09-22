@@ -29,14 +29,6 @@ body {
     margin: auto !important;
 }
 
-iframe {
-    width: 100%;
-    height: max(25vh, 25vw);
-
-    border: none;
-
-}
-
 h2,
 p {
     color: white;
@@ -173,23 +165,6 @@ body {
 .span_image {
     width: 30px;
     padding-bottom: 5px;
-}
-
-.footer {
-    min-height: max-content;
-    width: 80vw;
-
-    background-color: white;
-
-    padding-left: 10vw;
-    padding-right: 10vw;
-
-    padding-top: 1vw;
-    padding-bottom: 1vw;
-}
-
-.footer_img {
-    max-height: 20vh;
 }
 
 .reviews_pane {

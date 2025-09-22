@@ -13,10 +13,3 @@ body {
 image, img {
     background-color: white;
 }
-
-iframe {
-    width: 100%;
-    height: max(25vw, 25vh);
-
-    border: none;
-}

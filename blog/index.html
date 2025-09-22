@@ -5,22 +5,30 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
 
-    <link href="blog_style.css" rel="stylesheet" type="text/css" />
+    <link href="../header/header_style.css" rel="stylesheet" type="text/css" />
+    <script src="../header/headerFunctions.js"></script>
+
     <link href="post_style.css" rel="stylesheet" type="text/css" />
-
+    <link href="blog_style.css" rel="stylesheet" type="text/css" />
     <script src="blogFunctions.js"></script>
-
-    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 </head>
 
 <body onload="blogInit()">
-    <iframe class="menu_iframe" title="menu" src="../header/header.html" scrolling="no"></iframe>
+    <iframe id="header_iframe" title="menu" class="header_iframe" src="../header/header.html" scrolling="no"></iframe>
 
     <div class="search_div">
         <input class="search_bar" id="search_bar" type="search" placeholder="Search..">
     </div>
 
     <div class="selected_tags_div" id="selected_tags_div"></div>
+
+    <div class="page_select_div" id="page_select_div">
+        <button onclick="prevPage()" class="arrow_btn">⮘</button>
+        <select id="pageSelect" onchange="filterBlog()" class="page_select">
+            <option value=1 id="pg1">1</option>
+        </select>
+        <button onclick="nextPage()" class="arrow_btn">⮚</button>
+    </div>
 
     <div class="window_content">
         <div class="blog_content" id="blog_content"></div>
@@ -31,6 +39,10 @@
                 <button id="close_btn" class="content_button" onclick="closeAll()">Close All Posts</button>
                 <button id="chron_order" class="content_button" onclick="chronOrder()">Newest First</button>
                 <button id="rev_chron_order" class="content_button" onclick="refChronOrder()">Oldest First</button>
+                <select id="postPerPage" onchange="filterBlog()" class="round_select">
+                    <option value=25> 25 Posts Per Page</option>
+                    <option value=50> 50 Posts Per Page</option>
+                </select>
             </div>
             <div class="button_content">
                 <text class="button_text">Top Tags</text>
@@ -43,19 +55,14 @@
     <div class="footer_div">
         <div class="page_select_div" id="page_select_div">
             <button onclick="prevPage()" class="arrow_btn">⮘</button>
-            <select id="pageSelect" onchange="filterBlog()" class="round_select">
+            <select id="pageSelect" onchange="filterBlog()" class="page_select">
                 <option value=1 id="pg1">1</option>
             </select>
             <button onclick="nextPage()" class="arrow_btn">⮚</button>
         </div>
-
-        <select id="postPerPage" onchange="filterBlog()" class="round_select">
-            <option value=5> 5 Posts Per Page</option>
-            <option value=10> 10 Posts Per Page</option>
-            <option value=25> 25 Posts Per Page</option>
-            <option value=50> 50 Posts Per Page</option>
-        </select>
     </div>
+
+    <iframe id="footer_iframe" class="footer_iframe" src="../header/footer.html" scrolling="no"></iframe>
 </body>
 
 </html>

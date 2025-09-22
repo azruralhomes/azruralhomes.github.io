@@ -1,0 +1,40 @@
+p {
+    font-family: 'Arial';
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+body {
+    background-color: black;
+    color: white;
+    margin: 0;
+}
+
+.image_container {
+    display: flex;
+    justify-content: center;
+}
+
+.large_image {
+    max-width: 95vw;
+    margin: auto;
+}
+
+.image_carousel {
+    max-height: calc(8vh + 20px);
+
+    display: flex;
+    flex-direction: row;
+
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.small_image {
+    height: 8vh;
+    margin: 5px;
+}
+
+.selected_image {
+    border: 2px white solid;
+}

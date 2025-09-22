@@ -1,0 +1,22 @@
+p {
+    font-family: 'Arial';
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+body {
+    background-color: black;
+    color: white;
+    margin: 0;
+}
+
+image, img {
+    background-color: white;
+}
+
+iframe {
+    width: 100%;
+    height: max(25vw, 25vh);
+
+    border: none;
+}

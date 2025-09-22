@@ -17,8 +17,14 @@ var requestOptions = {
  * @returns none
  */
 async function blogInit() {
-    //TODO: top seven tags
+    markCurrent('blog');
+    resizeHeader();
     scroll(0, 0);
+
+    let iframe = document.getElementById('header_iframe');
+    let iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+    let head_tab = iframeDocument.getElementById('header_blog');
+    head_tab.outerHTML = head_tab.outerHTML.replace('header_tab', 'current')
 
     let content = document.getElementById("blog_content")
     content.innerHTML = '<h2 id="loading_icon">Loading Blog</h2>'
@@ -57,10 +63,12 @@ async function sendRequest() {
  * @returns none
 */
 function prevPage() {
-    let pgSelect = document.getElementById('pageSelect')
+    let pageSel = document.getElementsByClassName("page_select")
+    let currPg = pageSel[0].value;
 
-    if (pgSelect.value > 1) {
-        pgSelect.value = pgSelect.value - 1;
+    if (currPg > 1) {
+        pageSel[0].value = (parseInt(currPg) - 1);
+        pageSel[1].value = (parseInt(currPg) - 1);
         filterBlog();
     }
 }
@@ -71,11 +79,12 @@ function prevPage() {
  * @returns none
 */
 function nextPage() {
-    let pgSelect = document.getElementById('pageSelect')
+    let pageSel = document.getElementsByClassName("page_select")
+    let currPg = pageSel[0].value;
 
-    if (document.getElementById('pg' + (parseInt(pgSelect.value) + 1))) {
-        pgSelect.value = (parseInt(pgSelect.value) + 1);
-        console.log(pgSelect.value)
+    if (document.getElementById('pg' + (parseInt(currPg) + 1))) {
+        pageSel[0].value = (parseInt(currPg) + 1);
+        pageSel[1].value = (parseInt(currPg) + 1);
         filterBlog();
     }
 }
@@ -85,10 +94,10 @@ async function buildPosts(response) {
     content = document.getElementById("blog_content")
 
     let postsPer = document.getElementById('postPerPage').value;
-    let pages = document.getElementById("page_select_div")
-    pages.style.display = 'none';
-    let pageSel = document.getElementById("pageSelect")
-    pageSel.innerHTML = '<option value="1" id="opt1">1</option>'
+
+    let pageSel = document.getElementsByClassName("page_select")
+    pageSel[0].innerHTML = '<option value="1" id="opt1">1</option>'
+    pageSel[1].innerHTML = '<option value="1" id="opt1">1</option>'
 
     for (let h = 0; h < response.length; h++) {
         let page = JSON.parse(response[h]);
@@ -107,8 +116,6 @@ function newBlogPost(entry, pageNum) {
     let post = '';
 
     entry['content'] = entry['content'].replaceAll('<span style="font-size: medium;">', '').replaceAll('</span>', '').replaceAll('&nbsp;', '')
-
-    console.log(entry['content'].substr(0, 200));
 
     if (pageNum == 1) {
         post = `<details class="post_div" id="post_${entry['id']}" style="display: block;"><summary class="title">${entry['title']}</summary><h3 class="published">${new Date(entry['updated']).toDateString()}</h3><h3 class="author">${entry['author']['displayName']}</h3><div class="body">${entry['content']}</div><div class="tags">${tags}</div></details>`
@@ -185,19 +192,20 @@ function searchBlog() {
 
     document.getElementsByClassName('selected_tags_div').innerHTML = '';
     let posts = document.getElementsByClassName('post_div');
-    let pgSelect = document.getElementById('pageSelect');
+    let pageSel = document.getElementsByClassName("page_select");
     let postsPer = document.getElementById('postPerPage');
-    let currentPg = parseInt(pgSelect.value);
+    let currentPg = parseInt(pageSel[0].value);
 
-    pgSelect.innerHTML = '';
-    pgSelect.innerHTML = pgSelect.innerHTML + `<option value=${1} id="pg${1}">pg${1}</option>`;
+    pageSel[0].innerHTML = `<option value=${1} id="pg${1}">${1}</option>`;
+    pageSel[1].innerHTML = `<option value=${1} id="pg${1}">${1}</option>`;
 
     let filteredCount = 0;
     for (let i = 0; i < posts.length; i++) {
         let pageNum = parseInt(parseInt(filteredCount) / parseInt(postsPer.value)) + 1;
 
         if (!document.getElementById('pg' + pageNum)) {
-            pgSelect.innerHTML = pgSelect.innerHTML + `<option value=${pageNum} id="pg${pageNum}">pg${pageNum}</option>`;
+            pageSel[0].innerHTML = pageSel[0].innerHTML + `<option value=${pageNum} id="pg${pageNum}">pg${pageNum}</option>`;
+            pageSel[1].innerHTML = pageSel[1].innerHTML + `<option value=${pageNum} id="pg${pageNum}">pg${pageNum}</option>`;
         }
 
         if (posts[i].innerText.indexOf(search) >= 0) {
@@ -210,7 +218,8 @@ function searchBlog() {
             posts[i].style.display = 'none';
         }
     }
-    pgSelect.value = currentPg;
+    pageSel[0].value = currentPg;
+    pageSel[1].value = currentPg;
 }
 
 /**
@@ -274,13 +283,13 @@ function filterBlog() {
     let posts = document.getElementsByClassName('post_div')
     let tags = document.getElementsByClassName('filterButton')
 
-    let pgSelect = document.getElementById('pageSelect')
+    let pageSel = document.getElementsByClassName("page_select")
     let postsPer = document.getElementById('postPerPage')
-    let currentPg = parseInt(pgSelect.value);
+    let currentPg = parseInt(pageSel[0].value);
 
-    pgSelect.innerHTML = '';
-    pgSelect.innerHTML = pgSelect.innerHTML + `<option value=${1} id="pg${1}">pg${1}</option>`;
-
+    pageSel[0].innerHTML = `<option value=${1} id="pg${1}">${1}</option>`;
+    pageSel[1].innerHTML = `<option value=${1} id="pg${1}">${1}</option>`;
+        
     let filteredCount = 0;
     for (let i = 0; i < posts.length; i++) {
         let add = true;
@@ -297,7 +306,8 @@ function filterBlog() {
         let pageNum = parseInt(filteredCount / parseInt(postsPer.value)) + 1;
 
         if (!document.getElementById('pg' + pageNum)) {
-            pgSelect.innerHTML = pgSelect.innerHTML + `<option value=${pageNum} id="pg${pageNum}">pg${pageNum}</option>`;
+            pageSel[0].innerHTML = pageSel[0].innerHTML + `<option value=${pageNum} id="pg${pageNum}">pg${pageNum}</option>`;
+            pageSel[1].innerHTML = pageSel[1].innerHTML + `<option value=${pageNum} id="pg${pageNum}">pg${pageNum}</option>`;
         }
 
         if (add && pageNum === currentPg) {
@@ -312,7 +322,8 @@ function filterBlog() {
             filteredCount = filteredCount + 1;
         }
     }
-    pgSelect.value = currentPg;
+    pageSel[0].value = currentPg;     
+    pageSel[1].value = currentPg;     
 }
 
 /** 

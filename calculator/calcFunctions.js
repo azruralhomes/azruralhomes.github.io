@@ -40,7 +40,17 @@ function calculate() {
 }
 
 function addInput() {
-    let newInput = `<input type="text" class="addtl_input" placeholder="optional label"><input type="number" value="0">`;
     let grid = document.getElementById('input_grid');
-    grid.innerHTML += newInput;
+
+    var inp = document.createElement("input");
+    inp.type = 'text';
+    inp.classList.add('addtl_input')
+    inp.placeholder = 'optional label';
+    grid.appendChild(inp);
+
+    inp = document.createElement("input");
+    inp.type = 'number';
+    inp.value = 0;
+    grid.appendChild(inp);
+
 }

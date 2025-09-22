@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VKT25Q38Q1"></script>
+
+    <link href="../header/header_style.css" rel="stylesheet" type="text/css" />
+    <script src="../header/headerFunctions.js"></script>
+
+    <link href="gallery_style.css" rel="stylesheet" type="text/css" />
+    <script src="galleryFunctions.js"></script>
+</head>
+
+<body onload="init()">
+    <iframe id="header_iframe" title="menu" class="header_iframe" src="../header/header.html" scrolling="no"></iframe>
+
+    <div class="image_container">
+        <image id="large_image" class="large_image" src="images/IMG_0014.JPG"></image>
+    </div>
+
+    <div id="image_carousel" class="image_carousel">
+        <image id="image1" onclick="changeImage()" class="small_image selected_image" src="images/IMG_0014.JPG"></image>
+        <image id="image2" onclick="changeImage()" class="small_image" src="images/IMG_0016.JPG"></image>
+        <image id="image5" onclick="changeImage()" class="small_image" src="images/IMG_0019.JPG"></image>
+        <image id="image6" onclick="changeImage()" class="small_image" src="images/IMG_0021.JPG"></image>
+        <image id="image8" onclick="changeImage()" class="small_image" src="images/IMG_0052.JPG"></image>
+        <image id="image11" onclick="changeImage()" class="small_image" src="images/IMG_0927.JPG"></image>
+        <image id="image12" onclick="changeImage()" class="small_image" src="images/IMG_1151.JPG"></image>
+    </div>
+</body>
+
+</html>

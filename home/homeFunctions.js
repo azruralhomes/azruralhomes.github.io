@@ -1,4 +1,7 @@
-async function initMap() {
+async function init() {
+    markCurrent('home');
+    resizeHeader();
+
     let revs = await getReviews();
 
     if (revs.length < 1) {
@@ -6,7 +9,6 @@ async function initMap() {
     }
 
     else {
-
         for (let i = 0; i < revs.length; i++) {
             let rateStars = ''
             for (let j = 0; j < 5; j++) {
@@ -51,5 +53,3 @@ async function getReviews() {
 
     return place.reviews
 }
-
-initMap();

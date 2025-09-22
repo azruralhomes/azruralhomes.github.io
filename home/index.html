@@ -10,12 +10,15 @@
     <meta name="msapplication-TileImage" content="TODO">
     <meta name="keywords" content="">
 
+    <link href="../header/header_style.css" rel="stylesheet" type="text/css" />
+    <script src="../header/headerFunctions.js"></script>
+
     <link href="home_style.css" rel="stylesheet" type="text/css" />
-    <script type="module" src="./homeFunctions.js"></script>
+    <script src="homeFunctions.js"></script>
 </head>
 
-<body>
-    <iframe title="menu" src="../header/header.html" scrolling="no"></iframe>
+<body onload="init()">
+    <iframe id="header_iframe" title="menu" class="header_iframe" src="../header/header.html" scrolling="no"></iframe>
 
     <div class="content">
         <div class="flexible_row_col">
@@ -102,27 +105,7 @@
         </div>
     </div>
 
-    <div id="footer" class="footer flexible_row_col">
-        <img class="footer_img" src="photos/DRRE_logo_full_clear.png" />
-        <div class="content_col">
-            <div class="left_col">
-                <div class="content_row">
-                    <img src="photos/email.svg" class="contact_icon" />
-                    <a class="contact_info" href="mailto:cheryl@azruralhomes.com">cheryl@azruralhomes.com</a>
-                </div>
-                <div class="content_row">
-                    <img src="photos/phone.svg" class="contact_icon" />
-                    <a class="contact_info" href="tel:928-716-4048">(928)716-4048</a>
-                </div>
-                <div class="content_row">
-                    <img src="photos/cursor.svg" class="contact_icon" />
-                    <a class="contact_info" href="http://dirtroadrealestate.com">dirtroadrealestate.com</a>
-                </div>
-            </div>
-        </div>
-
-        <img class="footer_img" src="photos/MLS_EHS_logo.jpg" />
-    </div>
+    <iframe id="footer_iframe" class="footer_iframe" src="../header/footer.html" scrolling="no"></iframe>
 </body>
 
 </html>
