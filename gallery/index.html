@@ -21,15 +21,44 @@
         <image id="large_image" class="large_image" src="images/IMG_0014.JPG"></image>
     </div>
 
-    <div id="image_carousel" class="image_carousel">
-        <image id="image1" onclick="changeImage()" class="small_image selected_image" src="images/IMG_0014.JPG"></image>
-        <image id="image2" onclick="changeImage()" class="small_image" src="images/IMG_0016.JPG"></image>
-        <image id="image5" onclick="changeImage()" class="small_image" src="images/IMG_0019.JPG"></image>
-        <image id="image6" onclick="changeImage()" class="small_image" src="images/IMG_0021.JPG"></image>
-        <image id="image8" onclick="changeImage()" class="small_image" src="images/IMG_0052.JPG"></image>
-        <image id="image11" onclick="changeImage()" class="small_image" src="images/IMG_0927.JPG"></image>
-        <image id="image12" onclick="changeImage()" class="small_image" src="images/IMG_1151.JPG"></image>
+    <br>
+
+    <input id='carousel_page' style="display: none" type="number" value=1>
+
+    <div class="carousel">
+        <button onclick="prevPage()" class="prev_btn disable">⮘</button>
+        <div id="image_carousel" class="image_carousel">
+            <image id="small_0" onclick="changeImage(this)" class="small_image selected_image" src="images/small_IMG_0014.JPG">
+            </image>
+            <image id="small_1" onclick="changeImage(this)" class="small_image" src="images/small_DSCF6896.jpg"></image>
+            <image id="small_2" onclick="changeImage(this)" class="small_image" src="images/small_DSCF7002.jpg"></image>
+            <image id="small_3" onclick="changeImage(this)" class="small_image" src="images/small_IMG_0052.jpg"></image>
+            <image id="small_4" onclick="changeImage(this)" class="small_image" src="images/small_IMG_1275.jpg"></image>
+            <image id="small_7" onclick="changeImage(this)" class="small_image" src="images/small_IMG_1554.jpg"></image>
+            <image id="small_8" onclick="changeImage(this)" class="small_image" src="images/small_DSCF6928.jpg"></image>
+            <image id="small_9" onclick="changeImage(this)" class="small_image" src="images/small_IMG_0925.jpg"></image>
+            <image id="small_10" onclick="changeImage(this)" class="small_image" src="images/small_IMG_1276.jpg"></image>
+            <image id="small_11" onclick="changeImage(this)" class="small_image" src="images/small_IMG_1558.jpg"></image>
+            <image id="small_12" onclick="changeImage(this)" class="small_image" src="images/small_DSCF6966.jpg"></image>
+            <image id="small_13" onclick="changeImage(this)" class="small_image" src="images/small_IMG_0016.jpg"></image>
+            <image id="small_14" onclick="changeImage(this)" class="small_image" src="images/small_IMG_0926.jpg"></image>
+            <image id="small_15" onclick="changeImage(this)" class="small_image" src="images/small_IMG_1288.jpg"></image>
+            <image id="small_16" onclick="changeImage(this)" class="small_image" src="images/small_DSCF6986.jpg"></image>
+            <image id="small_17" onclick="changeImage(this)" class="small_image" src="images/small_IMG_0019.jpg"></image>
+            <image id="small_18" onclick="changeImage(this)" class="small_image" src="images/small_IMG_0927.jpg"></image>
+            <image id="small_19" onclick="changeImage(this)" class="small_image" src="images/small_IMG_1306.jpg"></image>
+            <image id="small_20" onclick="changeImage(this)" class="small_image" src="images/small_DSCF6991.jpg"></image>
+            <image id="small_21" onclick="changeImage(this)" class="small_image" src="images/small_IMG_0021.jpg"></image>
+            <image id="small_22" onclick="changeImage(this)" class="small_image" src="images/small_IMG_1151.jpg"></image>
+            <image id="small_23" onclick="changeImage(this)" class="small_image" src="images/small_IMG_1323.jpg"></image>
+        </div>
+        <button onclick="nextPage()" class="next_btn enable">⮚</button>
     </div>
+
+    <br>
+    <br>
+
+    <iframe id="footer_iframe" class="footer_iframe" src="../header/footer.html" scrolling="no"></iframe>
 </body>
 
 </html>
