@@ -1,5 +1,9 @@
 function resizeHeader() {
     document.getElementById("header_iframe").contentWindow.document.body.onclick = function () {
+        if (window.innerWidth > 600) {
+            console.log('too wide')
+            return
+        }
         let iFrame = document.getElementById("header_iframe");
         let menu = iFrame.contentWindow.document.getElementById('header_menu');
         let header = iFrame.contentWindow.document.getElementById('header_html');
