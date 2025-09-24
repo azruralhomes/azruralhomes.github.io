@@ -20,7 +20,7 @@ window.onload = function () {
             }
         }
 
-        emailjs.sendForm('service_facjbxg', 'template_poy4uku', this)
+        emailjs.sendForm('service_revwqmc', 'template_2iqiz7a', this)
             .then(() => {
                 console.log('send SUCCESS!');
                 alert("Email Sent!")
