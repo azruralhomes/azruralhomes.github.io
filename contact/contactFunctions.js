@@ -1,6 +1,10 @@
 async function init() {
     markCurrent('contact');
     resizeHeader();
+
+    emailjs.init({
+              publicKey: "usP-RPKB1gSxypArV",
+            });
 }
 
 window.onload = function () {
