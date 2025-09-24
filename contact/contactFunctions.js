@@ -24,7 +24,7 @@ window.onload = function () {
             .then(() => {
                 console.log('send SUCCESS!');
                 alert("Email Sent!")
-                window.location.reload();
+                //window.location.reload();
             }, (error) => {
                 console.log('send FAILED...', error);
                 alert("Send failed, please try again later. ")
