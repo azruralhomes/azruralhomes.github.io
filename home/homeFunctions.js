@@ -5,7 +5,7 @@ async function init() {
     let revs = await getReviews();
 
     if (revs.length < 1) {
-        document.getElementById('reviews_pane').innerHTML = '<h2 class="intro_text abraham">No Reviews Available, Please Leave One!</h2>'
+        document.getElementById('reviews_pane').innerHTML = '<h2 class="intro_text Marcellus">No Reviews Available, Please Leave One!</h2>'
     }
 
     else {

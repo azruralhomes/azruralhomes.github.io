@@ -1,9 +1,9 @@
-.abraham {
-    font-family: 'Abraham';
+.Marcellus {
+    font-family: 'Marcellus';
 }
 
-.merriweather {
-    font-family: 'Merriweather';
+.Manrope {
+    font-family: 'Manrope';
 }
 
 .sk-bio-container,
@@ -117,7 +117,7 @@ body {
 }
 
 .contact_info {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Manrope, Helvetica, sans-serif;
     font-size: 10px;
     text-decoration: none;
 
@@ -149,7 +149,7 @@ body {
 }
 
 .review_button {
-    font-family: 'Merriweather';
+    font-family: 'Manrope';
     font-size: 25px;
     text-decoration: none;
 
@@ -196,7 +196,7 @@ body {
 
     background-color: white;
 
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Manrope, Helvetica, sans-serif;
 }
 
 .review_author {

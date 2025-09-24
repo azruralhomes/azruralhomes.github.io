@@ -1,16 +1,27 @@
 @font-face {
-    font-family: 'Abraham';
-    src: url('fonts/AbrahamStampStamp-Jqw7.ttf');
+    font-family: 'Marcellus';
+    src: url('fonts/marcellus-font/Marcellus-llzw.ttf');
 }
 
 @font-face {
-    font-family: 'Merriweather';
-    src: url('fonts/merriweather-font/Merriweather-RXwe.ttf');
+    font-family: 'Marcellus-SC';
+    src: url('fonts/marcellus-font/MarcellusSc-n16O.ttf');
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('fonts/manrope-font/Manrope-VariableFont_wght.ttf');
+}
+
+/* universal colors */
+:root {
+    --sky_blue: #749AD8;
 }
 
 body,
 html {
     margin: 0;
+    font-style: 'Manrope';
 }
 
 @media (max-width: 600px) {
@@ -42,7 +53,7 @@ html {
         background: transparent;
         border: none;
 
-        font-family: 'Abraham';
+        font-family: 'Marcellus';
         font-size: 6vw;
 
         color: black;
@@ -59,11 +70,10 @@ html {
         text-align: center;
         padding: 1vw;
 
-        font-family: 'Abraham';
+        font-family: 'Marcellus';
         font-size: 6vw;
 
         color: black;
-        text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
     }
 
     .current {
@@ -71,13 +81,12 @@ html {
         text-align: center;
         padding: 1vw;
 
-        font-family: 'Abraham';
+        font-family: 'Marcellus';
         font-size: 6vw;
 
         backdrop-filter: blur(10px);
 
         color: black;
-        text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
     }
 
     .header {
@@ -112,24 +121,25 @@ html {
 @media (min-width: 600px) {
     .header_iframe {
         width: 100%;
-        height: min(22vw, 225px);
+        height: min(28vw, 225px);
 
         border: none;
     }
 
     .header_tab {
         text-decoration: none;
-        padding: 1vw;
+        vertical-align: bottom;
 
-        font-family: 'Abraham';
+        height: 4vw;
+        padding: 1vw;
+        margin: 0;
+
+        font-family: 'Marcellus';
         font-size: 3vw;
 
-        border-bottom: 1px white solid;
-        border-left: 1px white solid;
-        border-right: 1px white solid;
         border-top: none;
-        border-bottom-left-radius: 15px;
-        border-bottom-right-radius: 15px;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
 
         backdrop-filter: blur(10px);
 
@@ -138,7 +148,7 @@ html {
     }
 
     .header_tab:hover {
-        background-color: black;
+        background-color: var(--sky_blue);
     }
 
 
@@ -151,11 +161,11 @@ html {
         text-decoration: none;
         padding: 1vw;
 
-        font-family: 'Abraham';
+        font-family: 'Marcellus';
         font-size: 3vw;
 
-        color: black;
-        text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+        color: white;
+        text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
     }
 
     .menu_button,
@@ -190,6 +200,7 @@ html {
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
+        align-items: left;
 
         margin-top: 0;
     }
@@ -205,14 +216,13 @@ html {
 .header_col {
     display: flex;
     flex-direction: column;
-    justify-content: top;
-    align-items: left;
     margin: 0;
 }
 
 .header_text {
-    font-family: 'Abraham';
+    font-family: 'Marcellus-SC';
     font-size: max(min(6vw, 60px), 30px);
+    font-weight: 900;
 
     color: black !important;
 
@@ -222,12 +232,13 @@ html {
 }
 
 .header_sub_text {
-    font-family: 'Abraham';
+    font-family: 'Marcellus-SC';
     font-size: max(min(4vw, 40px), 20px);
+    font-weight: 900;
 
-    color: black;
+    color: white;
 
-    text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
     margin-top: 0;
     margin-bottom: 2vh;
     padding-left: min(5vw, 20px)
@@ -267,7 +278,7 @@ html {
 }
 
 .contact_info {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Manrope, Helvetica, sans-serif;
     font-size: 20px;
     text-decoration: none;
 
