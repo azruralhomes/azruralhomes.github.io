@@ -10,8 +10,8 @@ async function init() {
         console.log('submitted')
         event.preventDefault();
 
-        /**
-        let fields = ['user_name', 'user_email', 'input_area]
+        
+        let fields = ['user_name', 'user_email', 'user_message']
 
         for (let i = 0; i < 2; i++) {
             let field = document.getElementById(fields[i]);
@@ -23,7 +23,7 @@ async function init() {
                 return;
             }
         }
-         */
+        
 
         emailjs.sendForm('service_revwqmc', 'template_p3140au', this)
             .then(() => {
