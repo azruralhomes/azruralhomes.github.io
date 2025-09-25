@@ -26,8 +26,10 @@ image, img {
 }
 
 .email_form {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 20px;
 
     width: min-content;
@@ -48,14 +50,14 @@ image, img {
     min-height: 30px;
     border-radius: 10px;
 
-    width: 100%;
+    width: 80vw;
 }
 
 .input_area {
     min-height: 100px;
     border-radius: 10px;
 
-    width: 100%;
+    width: 80vw;
 }
 
 .button_bar {
@@ -77,4 +79,3 @@ image, img {
     font-family: Manrope, Helvetica, sans-serif;
     font-size: 25px;
 }
-

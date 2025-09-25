@@ -3,15 +3,15 @@ async function init() {
     resizeHeader();
 
     emailjs.init({
-              publicKey: "usP-RPKB1gSxypArV",
+              publicKey: "T6NncZswpsqKexUJC",
             });
-}
 
-window.onload = function () {
     document.getElementById('contact_form').addEventListener('submit', function (event) {
+        console.log('submitted')
         event.preventDefault();
 
-        let fields = ['user_name', 'user_email']
+        /**
+        let fields = ['user_name', 'user_email', 'input_area]
 
         for (let i = 0; i < 2; i++) {
             let field = document.getElementById(fields[i]);
@@ -23,12 +23,13 @@ window.onload = function () {
                 return;
             }
         }
+         */
 
-        emailjs.sendForm('service_revwqmc', 'template_2iqiz7a', this)
+        emailjs.sendForm('service_revwqmc', 'template_p3140au', this)
             .then(() => {
                 console.log('send SUCCESS!');
                 alert("Email Sent!")
-                //window.location.reload();
+                window.location.reload();
             }, (error) => {
                 console.log('send FAILED...', error);
                 alert("Send failed, please try again later. ")
