@@ -185,9 +185,12 @@ body {
     flex-direction: column;
     justify-content: center;
 
-    width: 21vw;
+    flex: 1;
+
     min-width: 250px;
     max-width: 500px;
+
+    min-height: max-content;
 
     padding: 3vw;
 

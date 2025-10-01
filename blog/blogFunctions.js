@@ -1,5 +1,5 @@
 // API url
-const blogURL = "https://g7dur3pogvpl2nf6guqe3zpkvi0rzedy.lambda-url.us-east-2.on.aws/";
+const blogURL = "https://tbulndcgqv6svxcrxz4msjmaue0lhfla.lambda-url.us-east-2.on.aws?process=blogger";
 
 //default options for the blog API request
 var requestOptions = {
