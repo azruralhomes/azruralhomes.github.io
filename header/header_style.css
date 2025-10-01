@@ -126,16 +126,21 @@ html {
         border: none;
     }
 
+    .header_col {
+        height: max(20vw, 20vh);
+    }
+
     .header_tab {
         text-decoration: none;
         vertical-align: bottom;
 
         height: 4vw;
-        padding: 1vw;
+        max-height: 50px;
+        padding: min(10px, 1vw);
         margin: 0;
 
         font-family: 'Marcellus';
-        font-size: 3vw;
+        font-size: clamp(20px, 3vw, 50px);
 
         border-top: none;
         border-bottom-left-radius: 20px;
@@ -151,18 +156,12 @@ html {
         background-color: var(--sky_blue);
     }
 
-
-    .header_col {
-        height: max(20vw, 20vh);
-    }
-
-
     .current {
         text-decoration: none;
-        padding: 1vw;
+        padding: min(10px, 1vw);
 
         font-family: 'Marcellus';
-        font-size: 3vw;
+        font-size: clamp(20px, 3vw, 50px);
 
         color: white;
         text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
