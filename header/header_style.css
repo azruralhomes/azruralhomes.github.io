@@ -93,7 +93,7 @@ html {
         margin-left: 0;
         margin-right: 0;
 
-        background-image: url('header_pano.JPG');
+        background-image: url('photos/header_pano.webp');
         background-size: cover;
         background-position: bottom;
     }
@@ -177,7 +177,7 @@ html {
         margin-left: 0;
         margin-right: 0;
 
-        background-image: url('header_pano.JPG');
+        background-image: url('photos/header_pano.webp');
         background-size: cover;
         background-position: bottom;
 
@@ -286,6 +286,7 @@ html {
 
 .contact_icon {
     width: 20px;
+    height: 20px;
     margin-right: 5px;
 }
 

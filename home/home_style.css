@@ -55,7 +55,7 @@ body {
 
     .headshot {
         width: 80vw;
-        height: auto;
+        aspect-ratio: 1/1;
 
         margin-bottom: 10px;
     }
@@ -164,7 +164,8 @@ body {
 
 .span_image {
     width: 30px;
-    padding-bottom: 5px;
+    height: 30px;
+    margin-bottom: 0;
 }
 
 .reviews_pane {
