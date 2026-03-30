@@ -99,12 +99,11 @@ async function buildPosts(response) {
     pageSel[0].innerHTML = '<option value="1" id="opt1">1</option>'
     pageSel[1].innerHTML = '<option value="1" id="opt1">1</option>'
 
-    for (let h = 0; h < response.length; h++) {
+    for (let h = 0; h < postsPer; h++) {
         let page = JSON.parse(response[h]);
-        for (let i = 0; i < page['items'].length; i++) {
-            pageNum = Math.floor(i / postsPer) + 1
-            content.innerHTML += newBlogPost(page['items'][i], pageNum);
-        }
+        console.log(page)
+        pageNum = Math.floor(i / postsPer) + 1
+        content.innerHTML += newBlogPost(page['items'][i], pageNum);
     }
 
     document.getElementById('loading_icon').remove();
