@@ -101,7 +101,7 @@ async function buildPosts(response) {
 
     console.log(response)
     for (let h = 0; h < postsPer; h++) {
-        let page = response[h]
+        let page = JSON.parse(response[h])
         console.log(page)
         pageNum = Math.floor(h / postsPer) + 1
         content.innerHTML += newBlogPost(page, pageNum);
