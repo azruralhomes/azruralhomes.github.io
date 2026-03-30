@@ -100,8 +100,9 @@ async function buildPosts(response) {
     pageSel[1].innerHTML = '<option value="1" id="opt1">1</option>'
 
     console.log(response)
+    response = json.parse(response)
     for (let h = 0; h < postsPer; h++) {
-        let page = JSON.parse(response[h]);
+        let page = response[h]
         console.log(page)
         pageNum = Math.floor(i / postsPer) + 1
         content.innerHTML += newBlogPost(page['items'][i], pageNum);
