@@ -103,8 +103,8 @@ async function buildPosts(response) {
     for (let h = 0; h < postsPer; h++) {
         let page = response[h]
         console.log(page)
-        pageNum = Math.floor(i / postsPer) + 1
-        content.innerHTML += newBlogPost(page['items'][i], pageNum);
+        pageNum = Math.floor(h / postsPer) + 1
+        content.innerHTML += newBlogPost(page, pageNum);
     }
 
     document.getElementById('loading_icon').remove();
