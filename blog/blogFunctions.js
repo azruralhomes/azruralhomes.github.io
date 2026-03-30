@@ -100,7 +100,7 @@ async function buildPosts(response) {
     pageSel[1].innerHTML = '<option value="1" id="opt1">1</option>'
 
     console.log(response)
-    response = json.parse(response)
+    response = JSON.parse(response)
     for (let h = 0; h < postsPer; h++) {
         let page = response[h]
         console.log(page)
