@@ -1,16 +1,16 @@
 @font-face {
     font-family: 'Marcellus';
-    src: url('fonts/marcellus-font/Marcellus-llzw.ttf');
+    src: url('header/fonts/marcellus-font/Marcellus-llzw.ttf');
 }
 
 @font-face {
     font-family: 'Marcellus-SC';
-    src: url('fonts/marcellus-font/MarcellusSc-n16O.ttf');
+    src: url('header/fonts/marcellus-font/MarcellusSc-n16O.ttf');
 }
 
 @font-face {
     font-family: 'Manrope';
-    src: url('fonts/manrope-font/Manrope-VariableFont_wght.ttf');
+    src: url('header/fonts/manrope-font/Manrope-VariableFont_wght.ttf');
 }
 
 /* universal colors */
@@ -93,7 +93,7 @@ html {
         margin-left: 0;
         margin-right: 0;
 
-        background-image: url('photos/header_pano.webp');
+        background-image: url('header/photos/header_pano.webp');
         background-size: cover;
         background-position: bottom;
     }
@@ -177,7 +177,7 @@ html {
         margin-left: 0;
         margin-right: 0;
 
-        background-image: url('photos/header_pano.webp');
+        background-image: url('header/photos/header_pano.webp');
         background-size: cover;
         background-position: bottom;
 
