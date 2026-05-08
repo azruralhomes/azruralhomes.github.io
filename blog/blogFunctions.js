@@ -127,6 +127,7 @@ function newBlogPost(entry, pageNum) {
 
 //tag bars are separate from blog posts for formatting reasons; these are the tags for each post.
 function newTagsBar(entry) {
+    console.log(entry)
     let tags = '';
     for (let j = 0; j < entry['labels'].length; j++) {
         let str = `<button id="${entry['labels'][j]}" class="tagButton" onclick="filterTag(this)">${entry['labels'][j]}</button>`
