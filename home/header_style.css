@@ -24,6 +24,14 @@ html {
     font-style: 'Manrope';
 }
 
+.logo_image {
+    height: min(20vw, 200px);
+}
+
+.logo_right{
+    background-color: white;
+}
+
 @media (max-width: 600px) {
     .header_iframe {
         width: 100%;

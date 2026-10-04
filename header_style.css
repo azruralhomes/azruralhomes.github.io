@@ -25,6 +25,10 @@ html {
 }
 
 @media (max-width: 600px) {
+    .logo_image {
+        display: none;
+    }
+
     .header_iframe {
         width: 100%;
 
@@ -112,13 +116,18 @@ html {
     .flexible_row_col {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        align-items: start;
 
     }
 }
 
 @media (min-width: 600px) {
+    .logo_image {
+        height: min(15vw, 150px);
+        padding-right: 3vw;
+    }
+
+
     .header_iframe {
         width: 100%;
         height: min(28vw, 225px);
@@ -207,8 +216,8 @@ html {
     .flexible_row_col {
         display: flex;
         flex-direction: row;
-        align-items: center;
-        justify-content: center;
+        align-items: start;
+        justify-content: space-between;
     }
 }
 
@@ -232,7 +241,7 @@ html {
 
 .header_sub_text {
     font-family: 'Marcellus-SC';
-    font-size: max(min(4vw, 40px), 20px);
+    font-size: max(min(3.5vw, 350px), 20px);
     font-weight: 900;
 
     color: white;
@@ -256,10 +265,10 @@ html {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: start;
 
     margin-bottom: 1vw;
-    margin-top: 1vw;
+    margin-top: 0;
 }
 
 .content_col {
