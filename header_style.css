@@ -235,7 +235,7 @@ html {
     color: black !important;
 
     text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
-    margin: 10px;
+    margin: 0;
     padding-left: min(5vw, 20px)
 }
 
